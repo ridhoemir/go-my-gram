@@ -20,9 +20,10 @@ import (
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
-		panic("Error loading .env file")
-	}
+	godotenv.Load()
+	// if err := godotenv.Load(); err != nil {
+	// 	panic("Error loading .env file")
+	// }
 	db, err := database.NewDatabase()
 	if err != nil {
 		panic(err)
