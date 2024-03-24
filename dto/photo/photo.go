@@ -20,7 +20,7 @@ type UserPhotoResponse struct {
 type PhotoCreateRequest struct {
 	Caption  string `json:"caption" validate:"omitempty,max=200"`
 	Title    string `json:"title" validate:"required,min=3,max=100"`
-	PhotoUrl string `json:"photo_url" validate:"required,url"`
+	PhotoUrl string `json:"photo_url" validate:"required,validateUrl"`
 }
 
 type PhotoCreateResponse struct {

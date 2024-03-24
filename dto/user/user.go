@@ -10,7 +10,7 @@ type UserCreateRequest struct {
 	Password        string `json:"password" validate:"required,min=6,max=50"`
 	Email           string `json:"email" validate:"required,email"`
 	Age             int    `json:"age" validate:"required,numeric,min=8"`
-	ProfileImageUrl string `json:"profile_image_url" validate:"omitempty,url"`
+	ProfileImageUrl string `json:"profile_image_url" validate:"omitempty,validateUrl"`
 }
 
 type UserLoginRequest struct {
@@ -22,7 +22,7 @@ type UserUpdateRequest struct {
 	Username        string `json:"username" validate:"required,min=3,max=50"`
 	Email           string `json:"email" validate:"required,email"`
 	Age             int    `json:"age" validate:"required,numeric,min=8"`
-	ProfileImageUrl string `json:"profile_image_url" validate:"omitempty,url"`
+	ProfileImageUrl string `json:"profile_image_url" validate:"omitempty,validateUrl"`
 }
 
 func (req UserCreateRequest) ToUser() core.User {

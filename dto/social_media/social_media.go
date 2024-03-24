@@ -9,7 +9,7 @@ import (
 
 type SocMedCreateRequest struct {
 	Name           string `json:"name" validate:"required,min=3,max=50"`
-	SocialMediaUrl string `json:"social_media_url" validate:"required,url"`
+	SocialMediaUrl string `json:"social_media_url" validate:"required,validateUrl"`
 }
 
 type SocMedCreateResponse struct {
@@ -21,7 +21,7 @@ type SocMedCreateResponse struct {
 
 type SocMedUpdateRequest struct {
 	Name           string `json:"name" validate:"required,min=3,max=50"`
-	SocialMediaUrl string `json:"social_media_url" validate:"required,url"`
+	SocialMediaUrl string `json:"social_media_url" validate:"required,validateUrl"`
 }
 
 type SocMedUpdateResponse struct {
