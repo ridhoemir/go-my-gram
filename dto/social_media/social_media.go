@@ -25,11 +25,10 @@ type SocMedUpdateRequest struct {
 }
 
 type SocMedUpdateResponse struct {
-	ID             uint      `json:"id"`
-	Name           string    `json:"name"`
-	SocialMediaUrl string    `json:"social_media_url"`
-	UserID         uint      `json:"user_id"`
-	UpdatedAt      time.Time `json:"updated_at"`
+	ID             uint   `json:"id"`
+	Name           string `json:"name"`
+	SocialMediaUrl string `json:"social_media_url"`
+	UserID         uint   `json:"user_id"`
 }
 
 type SocMedResponse struct {
@@ -79,7 +78,6 @@ func (res SocMedUpdateResponse) ToSocMedUpdateResponse(data core.SocialMedia) So
 		Name:           data.Name,
 		SocialMediaUrl: data.SocialMediaUrl,
 		UserID:         data.UserID,
-		UpdatedAt:      data.UpdatedAt,
 	}
 }
 

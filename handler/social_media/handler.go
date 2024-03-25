@@ -128,7 +128,7 @@ func (h *Handler) UpdateSocialMedia(ctx *gin.Context) {
 
 	res = res.ToSocMedUpdateResponse(resData)
 
-	ctx.JSON(201, res)
+	ctx.JSON(200, res)
 }
 
 func (h *Handler) DeleteSocialMedia(ctx *gin.Context) {
