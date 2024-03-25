@@ -118,6 +118,7 @@ func (h *Handler) UpdateSocialMedia(ctx *gin.Context) {
 
 	data := req.ToSocialMedia(req)
 	data.UserID = id
+	data.ID = uint(socMedId)
 
 	resData, err := h.service.UpdateSocialMedia(socMedId, data)
 	if err != nil {
