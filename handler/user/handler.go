@@ -34,7 +34,12 @@ func (h *Handler) RegisterUser(ctx *gin.Context) {
 		helpers.ReturnErrorMsg(ctx, err)
 		return
 	}
-	req.Password = helpers.HashPassword(req.Password)
+	hashedPassword, err := helpers.HashPassword(req.Password)
+	if err != nil {
+		ctx.JSON(500, gin.H{"error": err.Error()})
+		return
+	}
+	req.Password = hashedPassword
 	data := req.ToUser()
 
 	res, err := h.service.RegisterUser(data)
